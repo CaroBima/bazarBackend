@@ -58,23 +58,25 @@ En donde cada venta posee una lista de productos y uno y solo un cliente asociad
     <strong>Edición:</strong> localhost:8080/productos/editar/{codigo_producto} <br>
 <br>
 
-2.	Poder realizar un CRUD completo de clientes 
-  a.	Métodos HTTP: GET, POST, DELETE, PUT 
-  b.	Endpoints:  
-Creación: localhost:8080/clientes/crear 
-Lista completa de clientes: localhost:8080/clientes 
-Traer un cliente en particular: localhost:8080/clientes/{id_cliente} 
-Eliminación: localhost:8080/clientes/eliminar/{id_cliente} 
-Edición: localhost:8080/clientes/editar/{id_cliente} 
- 
-3.	Poder realizar un CRUD completo de ventas 
-a.	Métodos HTTP: GET, POST, DELETE, PUT 
-b.	Endpoints:  
-Creación: localhost:8080/ventas/crear 
-Lista completa de ventas realizadas: localhost:8080/ventas 
-Traer una venta en particular: localhost:8080/ventas/{codigo_venta} 
-Eliminación: localhost:8080/clientes/eliminar/{codigo_venta} 
-Edición: localhost:8080/clientes/editar/{codigo_venta} 
+2.	<strong>Poder realizar un CRUD completo de clientes </strong><br>
+  a.	<strong>Métodos HTTP:</strong> GET, POST, DELETE, PUT <br>
+  b.	<strong>Endpoints:</strong>  <br>
+<strong>Creación:</strong> localhost:8080/clientes/crear <br>
+<strong>Lista completa de clientes:</strong> localhost:8080/clientes <br>
+<strong>Traer un cliente en particular::</strong> localhost:8080/clientes/{id_cliente} <br>
+<strong>Eliminación::</strong> localhost:8080/clientes/eliminar/{id_cliente} <br>
+<strong>Edición::</strong> localhost:8080/clientes/editar/{id_cliente} <br>
+ <br>
+  
+3.	<strong>Poder realizar un CRUD completo de ventas </strong><br>
+a.	<strong>Métodos HTTP:</strong> GET, POST, DELETE, PUT <br>
+b.<strong>	Endpoints:  </strong><br>
+<strong>Creación:</strong> localhost:8080/ventas/crear <br>
+<strong>Lista completa de ventas realizadas:</strong> localhost:8080/ventas <br>
+<strong>Traer una venta en particular:</strong> localhost:8080/ventas/{codigo_venta} <br>
+<strong>Eliminación:</strong> localhost:8080/clientes/eliminar/{codigo_venta} <br>
+<strong>Edición:</strong> localhost:8080/clientes/editar/{codigo_venta} <br>
+ <br>
  
 Nota: No es necesario para este requerimiento actualizar el stock de un producto (descontar) al realizar una venta, ni tampoco controlar si cuenta con la cantidad disponible para vender; sin embargo, se considerará como “plus” o extra (para el bonus del punto 8) si se desea implementar la funcionalidad. 
  
