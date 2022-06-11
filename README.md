@@ -17,4 +17,21 @@ A partir del relevamiento que ha llevado a cabo un analista funcional, se detect
 •	Producto <br>
 •	Venta <br>
 •	Cliente <br><br>
-En donde cada venta posee una lista de productos y uno y solo un cliente asociado. Además de eso, cada clase debe tener los siguientes atributos: <br>
+En donde cada venta posee una lista de productos y uno y solo un cliente asociado. Además de eso, cada clase debe tener los siguientes atributos: <br> <br>
+<strong>Producto </strong> <br>
+•	Long codigo_producto  <br>
+•	String nombre  <br>
+•	String marca  <br>
+•	Double costo  <br>
+•	Double cantidad_disponible  <br> <br>
+<strong>Venta </strong> <br> 
+•	Long codigo_venta  <br>
+•	LocalDate fecha_venta  <br>
+•	Double total  <br>
+•	List<Producto> listaProductos  <br>
+•	Cliente unCliente  <br> <br>
+<strong>Cliente </strong> <br> 
+•	Long id_cliente  <br>
+•	String nombre  <br>
+•	String apellido  <br>
+•	String dni  <br>
