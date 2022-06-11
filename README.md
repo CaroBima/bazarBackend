@@ -100,8 +100,9 @@ Nota: No es necesario para este requerimiento actualizar el stock de un producto
  <br>
   
 Tener en cuenta patrón DTO para este escenario  <br>
+  <br>
   
 8. <strong>	BONUS (OPCIONAL) </strong><br>
-  a. <strong>	Se considera bonus cualquier propuesta de end-point, mejora, agregado de clase, etc que se proponga e implemente.</strong> <br>
-  b. <strong>Este apartado es opcional y pretende dejar volar la creatividad a la hora de proponer qué otras necesidades/requerimientos podrían existir en este escenario. </strong><br>
-  c. <strong>En caso de llevar a cabo este punto, especificar en un documento el/los nuevo/s requerimientos planteados y sus correspondientes especificaciones técnicas (método HTTP, endpoint, etc). Tomar como ejemplo de plantilla para la especificación a las consignas de este enunciado.</strong> <br>
+  a. Se considera bonus cualquier propuesta de end-point, mejora, agregado de clase, etc que se proponga e implemente. <br>
+  b. Este apartado es opcional y pretende dejar volar la creatividad a la hora de proponer qué otras necesidades/requerimientos podrían existir en este escenario. <br>
+  c. En caso de llevar a cabo este punto, especificar en un documento el/los nuevo/s requerimientos planteados y sus correspondientes especificaciones técnicas (método HTTP, endpoint, etc). Tomar como ejemplo de plantilla para la especificación a las consignas de este enunciado.<br>
