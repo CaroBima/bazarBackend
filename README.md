@@ -1,7 +1,15 @@
 # Bazar
 Backend de manejo de stock de productos de un bazar. Trabajo final de curso de SpringBoot de Todo Code
 
-## Escenario 
+## Resolución de los ejercicios de Hackerrank / Solutions to Hackerrank practice problems 
+
+
+* [Escenario](#escenario)
+* [Modelado](#modelado)
+* [Requerimientos](#requerimientos)
+
+
+# Escenario 
 Un bazar ha incrementado en gran medida sus ventas. Dado esto y que le está siendo casi imposible registrar las mismas y manejar el stock de sus productos de forma manual, necesita del desarrollo de una aplicación que le permita realizar esta tarea. 
 La dueña del bazar manifiesta que todas las operaciones que tenga la aplicación se deben poder realizar mediante dos tipos de clientes http distintos: <br> 
 •	Una aplicación web, cuyo frontend desarrollará un programador amigo (no será parte de nuestra tarea como desarrolladores backend). <br>
@@ -12,7 +20,7 @@ Dada esta situación particular y de que necesita utilizar el <strong>mismo back
 <br>
 <br>
 
-## Modelado 
+# Modelado 
 A partir del relevamiento que ha llevado a cabo un analista funcional, se detectaron que serán necesarias las siguientes clases: <br>
 •	Producto <br>
 •	Venta <br>
@@ -36,7 +44,7 @@ En donde cada venta posee una lista de productos y uno y solo un cliente asociad
 •	String apellido  <br>
 •	String dni  <br>
 
-## Requerimientos 
+# Requerimientos 
 
   A partir del relevamiento realizado respecto al modelado, la dueña del bazar especificó que tiene los siguientes requerimientos: <br> <br>
  
