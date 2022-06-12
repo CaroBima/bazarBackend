@@ -1,7 +1,7 @@
-# Bazar
-Backend de manejo de stock de productos de un bazar. Trabajo final de curso de SpringBoot de Todo Code
+## Bazar
+Backend de manejo de stock de productos de un bazar. 
 
-## Resolución de los ejercicios de Hackerrank / Solutions to Hackerrank practice problems 
+
 
 
 * [Escenario](#escenario)
