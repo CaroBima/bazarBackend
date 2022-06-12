@@ -29,7 +29,7 @@ public class Venta {
     private LocalDate fecha_venta;
     private double total;
     
-    @OneToMany (mappedBy = "venta")
+    @OneToMany 
     private List<Producto> listaProductos;
     
     @OneToOne
