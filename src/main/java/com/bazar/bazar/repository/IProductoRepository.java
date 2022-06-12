@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
+
 package com.bazar.bazar.repository;
+
+import com.bazar.bazar.model.Producto;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Caro
  */
-public interface IProductoRepository {
+public interface IProductoRepository extends  JpaRepository<Producto, Long> {
     
 }
