@@ -2,7 +2,9 @@
 package com.bazar.bazar.service;
 
 import com.bazar.bazar.model.Producto;
+import com.bazar.bazar.repository.IProductoRepository;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,29 +14,54 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductoService implements IProductoService{
 
+    @Autowired
+    private IProductoRepository productoRepo;
+    
     @Override
-    public void agregarProducto(Producto producto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void guardarProducto(Producto producto) {
+        productoRepo.save(producto);
     }
 
     @Override
     public List<Producto> buscarProductos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return productoRepo.findAll();
     }
 
     @Override
-    public Producto buscarUnCliente(Long idProducto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Producto buscarUnProducto(Long idProducto) {
+        return productoRepo.findById(idProducto).orElse(null);
     }
 
     @Override
-    public Producto modificarCliente(Long idCliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Producto modificarProducto(Long idProducto, String nuevoNombre, String nuevaMarca, Double nuevoCosto, Double nuevaCantDisp) {
+    
+        Producto producto = this.buscarUnProducto(idProducto);
+                
+        //verifico que se haya pasado este parametro para no guardar un valor null en la bbdd
+        if(nuevoNombre != null){
+           producto.setNombre(nuevoNombre); 
+       }
+        
+        if(nuevaMarca != null){
+            producto.setMarca(nuevaMarca);
+        }
+            
+        if(nuevoCosto != null){
+            producto.setCosto(nuevoCosto);
+        }
+        
+        if(nuevaCantDisp != null){
+            producto.setCantidad_disponible(nuevaCantDisp);
+        }
+        
+        
+       this.guardarProducto(producto);
+       return producto;    
     }
 
     @Override
-    public void eliminarCliente(Long idCliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void eliminarProducto(Long idProducto) {
+        productoRepo.deleteById(idProducto);
     }
     
 }
