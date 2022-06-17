@@ -36,10 +36,31 @@ public class VentaService implements IVentaService{
     }
 
     @Override
-    public Venta modificarVenta(Long idVenta, LocalDate nuevaFechaVenta, Double total, List<Producto> listaProd, Cliente uncliente) {
+    public Venta modificarVenta(Long idVenta, LocalDate nuevaFechaVenta, Double nuevoTotal, List<Producto> listaProd, Cliente nuevoCliente) {
         //implementar metodo para modificar venta
-        Venta venta = new Venta();
-        return venta;
+        Venta venta = this.buscarUnaVenta(idVenta);
+                
+                
+        //verifico que se haya pasado este parametro para no guardar un valor null en la bbdd
+        if(nuevaFechaVenta != null){
+           venta.setFecha_venta(nuevaFechaVenta); 
+       }
+        
+        if(nuevoTotal != null){
+            venta.setTotal(nuevoTotal);
+        }
+            
+        if(listaProd.size() != 0){
+            venta.setListaProductos(listaProd);
+        }
+        
+        if(nuevoCliente != null){
+            venta.setUnCliente(nuevoCliente);
+        }
+        
+        
+       this.guardarVenta(venta);
+       return venta;
     }
 
 
