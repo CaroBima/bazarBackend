@@ -41,7 +41,7 @@ public class VentaService implements IVentaService{
         Venta venta = this.buscarUnaVenta(idVenta);
                 
                 
-        //verifico que se haya pasado este parametro para no guardar un valor null en la bbdd
+        //verifico que se hayan pasado valores en los parametros para no guardar un valor null en la bbdd
         if(nuevaFechaVenta != null){
            venta.setFecha_venta(nuevaFechaVenta); 
        }
