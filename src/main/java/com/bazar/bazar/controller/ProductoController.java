@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductoController {
     
-      @Autowired
+    @Autowired
     private IProductoService productoServ;
     
     //Endpoint que permite agregar un nuevo producto
@@ -48,7 +48,6 @@ public class ProductoController {
     
        
         //se envia la id original para buscar a la persona a modificar + los nuevos datos
-        System.out.println("datos " + nuevoNombre + nuevaMarca);
         productoServ.modificarProducto(codigo_producto, nuevoNombre, nuevaMarca, nuevoCosto, nuevaCantDisp);
         
         
