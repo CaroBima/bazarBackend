@@ -2,7 +2,6 @@ package com.bazar.bazar.controller;
 
 import com.bazar.bazar.model.Producto;
 import com.bazar.bazar.service.IProductoService;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -36,6 +35,7 @@ public class ProductoController {
     //endpoint para borrar un producto
     @DeleteMapping("/producto/eliminar/{codigo_producto}")
     public void deletePersona(@PathVariable Long idProducto){
+        System.out.println("entra a deletear");
         productoServ.eliminarProducto(idProducto);
     }
     
