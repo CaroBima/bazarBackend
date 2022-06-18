@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Consultar lista de productos - enpoint /productos",
+			"name": "Productos - Consultar lista - enpoint /productos",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -26,7 +26,7 @@
 			"response": []
 		},
 		{
-			"name": "Guardar producto 1 - endpoint /productos/crear",
+			"name": "Productos - Guardar producto 1 - endpoint /productos/crear",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -55,7 +55,7 @@
 			"response": []
 		},
 		{
-			"name": "Guardar producto 2 - endpoint /productos/crear",
+			"name": "Productos - Guardar producto 2 - endpoint /productos/crear",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -84,7 +84,7 @@
 			"response": []
 		},
 		{
-			"name": "Borrar Producto - Endpoint /producto/eliminar/1",
+			"name": "Productos - Borrar Producto - Endpoint /producto/eliminar/1",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -105,7 +105,7 @@
 			"response": []
 		},
 		{
-			"name": "Editar producto - Endpoing /productos/editar/{codigo_producto}",
+			"name": "Productos -  Editar producto - Endpoint /productos/editar/{codigo_producto}",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -146,6 +146,160 @@
 						{
 							"key": "cantidad_disponible",
 							"value": "140"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - Guardar cliente 2 - Endpoint localhost:8080/clientes/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Eugenia\",\r\n    \"apellido\": \"Gomez\",\r\n    \"dni\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clientes/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - Guardar cliente 1 - localhost:8080/clientes/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Eustaquio\",\r\n    \"apellido\": \"Ramirez\",\r\n    \"dni\": \"234567891\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clientes/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - Consultar listado - localhost:8080/clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/clientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - Buscar un cliente - Endpoint localhost:8080/clientes/6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/clientes/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - Eliminar un cliente - Endpoint localhost:8080/clientes/eliminar/6",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/clientes/eliminar/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"eliminar",
+						"6"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - Editar un cliente - endpoint localhost:8080/clientes/editar/7?nombre=Miguelina&apellido=Juarez&dni=456789123",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/clientes/editar/7?nombre=Miguelina&apellido=Juarez&dni=456789123",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"editar",
+						"7"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Miguelina"
+						},
+						{
+							"key": "apellido",
+							"value": "Juarez"
+						},
+						{
+							"key": "dni",
+							"value": "456789123"
 						}
 					]
 				}

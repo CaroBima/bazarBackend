@@ -1,11 +1,7 @@
-
-
 package com.bazar.bazar.controller;
 
 import com.bazar.bazar.model.Cliente;
-import com.bazar.bazar.model.Producto;
 import com.bazar.bazar.service.IClienteService;
-import com.bazar.bazar.service.IProductoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,8 +36,14 @@ public class ClienteController {
         return  clienteServ.buscarClientes();
     }
     
+    //trae un cliente en particular
+    @GetMapping("/clientes/{id_cliente}")
+    public Cliente traerUnCliente(@PathVariable Long id_cliente){
+        return  clienteServ.buscarUnCliente(id_cliente);
+    }
+    
     //endpoint para borrar un producto
-    @DeleteMapping("/producto/eliminar/{id_cliente}")
+    @DeleteMapping("clientes/eliminar/{id_cliente}")
     public void deleteCliente(@PathVariable Long id_cliente){
         clienteServ.eliminarCliente(id_cliente);
     }
