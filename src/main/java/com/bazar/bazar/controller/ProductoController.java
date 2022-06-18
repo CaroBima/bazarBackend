@@ -34,14 +34,13 @@ public class ProductoController {
     
     //endpoint para borrar un producto
     @DeleteMapping("/producto/eliminar/{codigo_producto}")
-    public void deletePersona(@PathVariable Long idProducto){
-        System.out.println("entra a deletear");
-        productoServ.eliminarProducto(idProducto);
+    public void deletePersona(@PathVariable Long codigo_producto){
+        productoServ.eliminarProducto(codigo_producto);
     }
     
     //Edición de un producto:
     @PutMapping("/productos/editar/{codigo_producto}")
-    public Producto editPersona(@PathVariable Long idOriginal,
+    public Producto editPersona(@PathVariable Long codigo_producto,
                                 @RequestParam( required = false, name = "nombre") String nuevoNombre,
                                 @RequestParam( required = false, name = "marca") String nuevaMarca,
                                 @RequestParam( required = false, name = "costo") Double nuevoCosto,
@@ -49,10 +48,11 @@ public class ProductoController {
     
        
         //se envia la id original para buscar a la persona a modificar + los nuevos datos
-        productoServ.modificarProducto(idOriginal, nuevoNombre, nuevaMarca, nuevoCosto, nuevaCantDisp);
+        System.out.println("datos " + nuevoNombre + nuevaMarca);
+        productoServ.modificarProducto(codigo_producto, nuevoNombre, nuevaMarca, nuevoCosto, nuevaCantDisp);
         
         
-        return productoServ.buscarUnProducto(idOriginal);
+        return productoServ.buscarUnProducto(codigo_producto);
     }
     
 }
