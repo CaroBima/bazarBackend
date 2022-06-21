@@ -43,7 +43,7 @@ public class ClienteController {
     }
     
     //endpoint para borrar un producto
-    @DeleteMapping("clientes/eliminar/{id_cliente}")
+    @DeleteMapping("/clientes/eliminar/{id_cliente}")
     public void deleteCliente(@PathVariable Long id_cliente){
         clienteServ.eliminarCliente(id_cliente);
     }
