@@ -1,14 +1,15 @@
-
 package com.bazar.bazar.model;
 
 import java.time.LocalDate;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Getter;
@@ -29,7 +30,13 @@ public class Venta {
     private LocalDate fecha_venta;
     private double total;
     
-    @OneToMany 
+    
+    @JoinTable(name = "ventaxproductos", joinColumns = {
+                @JoinColumn(name = "codigo_venta", nullable = false)},
+                inverseJoinColumns = {
+                @JoinColumn(name = "codigo_producto", nullable = false)})
+    @ManyToMany 
+    (cascade = CascadeType.MERGE)
     private List<Producto> listaProductos;
     
     @OneToOne

@@ -29,7 +29,7 @@ public class VentaController {
     public IVentaService ventaServ;
     
      //Endpoint que permite agregar una nueva venta
-    @PostMapping("/productos/crear")
+    @PostMapping("/ventas/crear")
     public void crearVenta(@RequestBody Venta venta){
         ventaServ.guardarVenta(venta);
     }
