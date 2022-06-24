@@ -6,7 +6,10 @@ import com.bazar.bazar.model.Cliente;
 import com.bazar.bazar.model.Producto;
 import com.bazar.bazar.model.Venta;
 import com.bazar.bazar.service.IVentaService;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -56,15 +59,30 @@ public class VentaController {
         //Edición de un producto:
     @PutMapping("/ventas/editar/{codigo_venta}")
     public Venta editVenta (@PathVariable Long codigo_venta,
-                                @RequestParam( required = false, name = "fecha_venta") LocalDate nuevaFecha,
+                                @RequestParam( required = false, name = "fecha_venta") String nuevaFecha,
                                 @RequestParam( required = false, name = "total") Double nuevoTotal,
                                 @RequestParam( required = false, name = "listaProductos") List<Producto> nuevaListProductos,
                                 @RequestParam( required = false, name = "unCliente") Cliente unCliente){
     
        
         //se envia la id original para buscar la venta a modificar + los nuevos datos
-        ventaServ.modificarVenta(codigo_venta, nuevaFecha, nuevoTotal, nuevaListProductos, unCliente);
+        LocalDate nuevaF = conversorFecha(nuevaFecha);
+               ventaServ.modificarVenta(codigo_venta, nuevaF, nuevoTotal, nuevaListProductos, unCliente);
         return ventaServ.buscarUnaVenta(codigo_venta);
         
+    }
+    
+    
+    private LocalDate conversorFecha(String fechaAConvertir){
+     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+     Date fechaConvertida=null;
+
+    try {
+        Date parsed =  dateFormat.parse(fechaAConvertir);
+        fechaConvertida = new Date(parsed.getTime());
+        } catch(Exception e) {
+            System.out.println("Error occurred"+ e.getMessage());
+        }
+    return fechaConvertida.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }
 }

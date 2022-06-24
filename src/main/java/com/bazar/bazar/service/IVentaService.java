@@ -16,7 +16,7 @@ public interface IVentaService {
     public void guardarVenta(Venta venta);
     public List<Venta> buscarVentas();
     public Venta buscarUnaVenta(Long idVenta);
-    public Venta  modificarVenta(Long idVenta, LocalDate nuevaFechaVenta, Double total, List<Producto> listaProd, Cliente uncliente);
+    public Venta  modificarVenta(Long idVenta, LocalDate nuevaFechaVenta, Double total, List<Producto> nuevaListProductos, Cliente uncliente);
     public void eliminarVenta(Long idVenta);
     
 }

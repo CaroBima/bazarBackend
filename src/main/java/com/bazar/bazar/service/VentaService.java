@@ -36,7 +36,7 @@ public class VentaService implements IVentaService{
     }
 
     @Override
-    public Venta modificarVenta(Long idVenta, LocalDate nuevaFechaVenta, Double nuevoTotal, List<Producto> listaProd, Cliente nuevoCliente) {
+    public Venta modificarVenta(Long idVenta, LocalDate nuevaFechaVenta, Double nuevoTotal, List<Producto> nuevaListProductos, Cliente nuevoCliente) {
         //implementar metodo para modificar venta
         Venta venta = this.buscarUnaVenta(idVenta);
                 
@@ -50,8 +50,8 @@ public class VentaService implements IVentaService{
             venta.setTotal(nuevoTotal);
         }
             
-        if(listaProd.size() != 0){
-            venta.setListaProductos(listaProd);
+        if(nuevaListProductos.size() != 0 && nuevaListProductos != null){
+            venta.setListaProductos(nuevaListProductos);
         }
         
         if(nuevoCliente != null){
