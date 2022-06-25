@@ -1,7 +1,9 @@
 package com.bazar.bazar.controller;
 
 import com.bazar.bazar.model.Producto;
+import com.bazar.bazar.model.Venta;
 import com.bazar.bazar.service.IProductoService;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,7 +42,7 @@ public class ProductoController {
     
     //Edición de un producto:
     @PutMapping("/productos/editar/{codigo_producto}")
-    public Producto editPersona(@PathVariable Long codigo_producto,
+    public Producto editProducto(@PathVariable Long codigo_producto,
                                 @RequestParam( required = false, name = "nombre") String nuevoNombre,
                                 @RequestParam( required = false, name = "marca") String nuevaMarca,
                                 @RequestParam( required = false, name = "costo") Double nuevoCosto,
@@ -52,6 +54,25 @@ public class ProductoController {
         
         
         return productoServ.buscarUnProducto(codigo_producto);
+    }
+    
+    
+    @GetMapping("/productos/falta_stock")
+    public List<Producto> productosFaltantes(){
+        List<Producto> listaProdFaltantes  = new ArrayList();
+        List<Producto> todosLosProductos;
+        
+        todosLosProductos = productoServ.buscarProductos();
+        
+        for (Producto prod : todosLosProductos){
+            if(prod.getCantidad_disponible() < 5.0){
+                System.out.println(prod.getCantidad_disponible());
+                listaProdFaltantes.add(prod);
+               
+            }
+        }
+        
+        return listaProdFaltantes;
     }
     
 }

@@ -72,7 +72,9 @@ public class VentaController {
         
     }
     
-    
+ 
+            
+            
     private LocalDate conversorFecha(String fechaAConvertir){
      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
      Date fechaConvertida=null;

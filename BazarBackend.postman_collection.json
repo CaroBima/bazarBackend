@@ -26,13 +26,13 @@
 			"response": []
 		},
 		{
-			"name": "Productos - Guardar producto 1 - endpoint /productos/crear",
+			"name": "Productos - Guardar producto 3 - endpoint /productos/crear",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n \"nombre\": \"Vasos\",\r\n \"marca\": \"Durex\",\r\n \"costo\": \"200\",\r\n \"cantidad_disponible\": \"240\"   \r\n}",
+					"raw": "{\r\n \"nombre\": \"Escurridor de platos\",\r\n \"marca\": \"HomeThings\",\r\n \"costo\": \"1050\",\r\n \"cantidad_disponible\": \"3\"   \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -301,6 +301,218 @@
 							"key": "dni",
 							"value": "456789123"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas - Crear venta 1 - Endpoint /ventas/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha_venta\":\"2022-06-22\",\r\n    \"total\": \"325.25\",\r\n    \"listaProductos\":[\r\n        {\r\n            \"codigo_producto\": \"1\",\r\n            \"nombre\": \"Vasos\",\r\n            \"marca\": \"Durex\",\r\n            \"costo\": \"200\",\r\n            \"cantidad_disponible\": \"240\"\r\n\r\n        }\r\n        ],\r\n    \"unCliente\": {\r\n        \"id_cliente\":\"3\",\r\n        \"nombre\":\"Eustaquio\",\r\n        \"apellido\": \"Ramirez\",\r\n        \"dni\": \"234567891\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ventas/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas - Crear venta 2 - Endpoint localhost:8080/ventas/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha_venta\":\"2022-05-15\",\r\n    \"total\": \"1350.25\",\r\n    \"listaProductos\":[\r\n        {\r\n            \"codigo_producto\": \"1\",\r\n            \"nombre\": \"Vasos\",\r\n            \"marca\": \"Durex\",\r\n            \"costo\": \"200\",\r\n            \"cantidad_disponible\": \"240\"\r\n\r\n        },\r\n         {\r\n            \"codigo_producto\": \"2\",\r\n            \"nombre\": \"Platos\",\r\n            \"marca\": \"Durex\",\r\n            \"costo\": \"250\",\r\n            \"cantidad_disponible\": \"140\"\r\n\r\n        }\r\n        ],\r\n    \"unCliente\": {\r\n        \"id_cliente\": \"4\",\r\n        \"nombre\":\"Eugenia\",\r\n        \"apellido\": \"Gomez\",\r\n        \"dni\": \"12345678\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ventas/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas - Consultar lista - Endpoint localhost:8080/ventas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ventas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas - Consultar una venta por id - Endpoint localhost:8080/ventas/5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ventas/9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas - Borrar venta - Endpoint localhost:8080/ventas/eliminar/6",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ventas/eliminar/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"eliminar",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "_No anda - Ventas - Editar venta - Endpoint localhost:8080/ventas/editar/9?codigo_venta=9&fecha_venta=2022-06-22&total=325.25&listaProductos[0].codigo_producto= 1&listaProductos[0].nombre=Vasos&listaProductos[0].marca=Durex&listaProductos[0].costo=200.0&l",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ventas/editar/9?codigo_venta=9&fecha_venta=2022-06-22&total=325.25&listaProductos[0].codigo_producto= 1&listaProductos[0].nombre=Vasos&listaProductos[0].marca=Durex&listaProductos[0].costo=200.0&listaProductos[0].cantidad_disponible=240.0&unCliente.id_cliente=3&unCliente.nombre=Eustaquio&unCliente.apellido=Ramirez&unCliente.dni=234567891",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"editar",
+						"9"
+					],
+					"query": [
+						{
+							"key": "codigo_venta",
+							"value": "9"
+						},
+						{
+							"key": "fecha_venta",
+							"value": "2022-06-22"
+						},
+						{
+							"key": "total",
+							"value": "325.25"
+						},
+						{
+							"key": "listaProductos[0].codigo_producto",
+							"value": " 1"
+						},
+						{
+							"key": "listaProductos[0].nombre",
+							"value": "Vasos"
+						},
+						{
+							"key": "listaProductos[0].marca",
+							"value": "Durex"
+						},
+						{
+							"key": "listaProductos[0].costo",
+							"value": "200.0"
+						},
+						{
+							"key": "listaProductos[0].cantidad_disponible",
+							"value": "240.0"
+						},
+						{
+							"key": "unCliente.id_cliente",
+							"value": "3"
+						},
+						{
+							"key": "unCliente.nombre",
+							"value": "Eustaquio"
+						},
+						{
+							"key": "unCliente.apellido",
+							"value": "Ramirez"
+						},
+						{
+							"key": "unCliente.dni",
+							"value": "234567891"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos - Stock < 5 - Endpoint http://localhost:8080/productos/falta_stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos/falta_stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"falta_stock"
 					]
 				}
 			},
