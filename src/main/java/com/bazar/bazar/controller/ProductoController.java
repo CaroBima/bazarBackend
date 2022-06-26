@@ -48,11 +48,9 @@ public class ProductoController {
                                 @RequestParam( required = false, name = "costo") Double nuevoCosto,
                                 @RequestParam( required = false, name = "cantidad_disponible") Double nuevaCantDisp){
     
-       
         //se envia la id original para buscar a la persona a modificar + los nuevos datos
         productoServ.modificarProducto(codigo_producto, nuevoNombre, nuevaMarca, nuevoCosto, nuevaCantDisp);
-        
-        
+                
         return productoServ.buscarUnProducto(codigo_producto);
     }
     
@@ -62,13 +60,11 @@ public class ProductoController {
         List<Producto> listaProdFaltantes  = new ArrayList();
         List<Producto> todosLosProductos;
         
+        //traigo la lista de productos y la recorro buscando aquellos cuyo stock sea menor a 5
         todosLosProductos = productoServ.buscarProductos();
-        
         for (Producto prod : todosLosProductos){
             if(prod.getCantidad_disponible() < 5.0){
-                System.out.println(prod.getCantidad_disponible());
                 listaProdFaltantes.add(prod);
-               
             }
         }
         

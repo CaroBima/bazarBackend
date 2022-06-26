@@ -9,6 +9,7 @@ import com.bazar.bazar.service.IVentaService;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,7 +73,12 @@ public class VentaController {
         
     }
     
- 
+    @GetMapping("/ventas/productos/{codigo_venta}")
+    public List<Producto> traerProductosXIdVenta(@PathVariable Long codigo_venta){
+        Venta venta = ventaServ.buscarUnaVenta(codigo_venta);
+        
+        return venta.getListaProductos();
+    }
             
             
     private LocalDate conversorFecha(String fechaAConvertir){
