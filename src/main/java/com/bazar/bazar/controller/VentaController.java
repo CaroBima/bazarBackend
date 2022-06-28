@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -80,6 +82,24 @@ public class VentaController {
         return venta.getListaProductos();
     }
             
+    
+    @GetMapping("/ventasF/{fecha_venta}")
+    public List<Venta> traerVentasXFecha(@PathVariable String fechaDeVentas){
+        List<Venta> listaVentasXFecha = new ArrayList();
+        List<Venta> listaVentas = ventaServ.buscarVentas();
+        System.out.println(fechaDeVentas);
+        LocalDate fechaAConsultar = conversorFecha(fechaDeVentas);
+        
+        for(Venta venta : listaVentas){
+            System.out.println("entra al for");
+            if(venta.getFecha_venta().equals(fechaAConsultar)){
+                System.out.println("entra al if");
+                listaVentasXFecha.add(venta);
+            }
+        }
+                
+        return listaVentasXFecha;
+    }
             
     private LocalDate conversorFecha(String fechaAConvertir){
      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
