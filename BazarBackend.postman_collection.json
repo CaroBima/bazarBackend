@@ -7,25 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "Productos - Consultar lista - enpoint /productos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/productos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"productos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Productos - Guardar producto 3 - endpoint /productos/crear",
 			"request": {
 				"method": "POST",
@@ -78,6 +59,45 @@
 					"path": [
 						"productos",
 						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos - Consultar lista - enpoint /productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos - Stock < 5 - Endpoint http://localhost:8080/productos/falta_stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos/falta_stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"falta_stock"
 					]
 				}
 			},
@@ -400,6 +420,27 @@
 			"response": []
 		},
 		{
+			"name": "Ventas - Consultar lista de productos de una venta - Endpoint http://localhost:8080/ventas/productos/5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ventas/productos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"productos",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Ventas - Borrar venta - Endpoint localhost:8080/ventas/eliminar/6",
 			"request": {
 				"method": "DELETE",
@@ -499,20 +540,19 @@
 			"response": []
 		},
 		{
-			"name": "Productos - Stock < 5 - Endpoint http://localhost:8080/productos/falta_stock",
+			"name": "Ventas - Consultar ventas por fecha - Endpoint localhost:8080/ventasFecha/2022-05-15",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/productos/falta_stock",
-					"protocol": "http",
+					"raw": "localhost:8080/ventasFecha/2022-05-15",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"productos",
-						"falta_stock"
+						"ventasFecha",
+						"2022-05-15"
 					]
 				}
 			},

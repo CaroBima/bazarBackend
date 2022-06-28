@@ -83,12 +83,12 @@ public class VentaController {
     }
             
     
-    @GetMapping("/ventasF/{fecha_venta}")
-    public List<Venta> traerVentasXFecha(@PathVariable String fechaDeVentas){
+    @GetMapping("/ventasFecha/{fecha_venta}")
+    public List<Venta> traerVentasXFecha(@PathVariable String fecha_venta){
         List<Venta> listaVentasXFecha = new ArrayList();
         List<Venta> listaVentas = ventaServ.buscarVentas();
-        System.out.println(fechaDeVentas);
-        LocalDate fechaAConsultar = conversorFecha(fechaDeVentas);
+        System.out.println(fecha_venta);
+        LocalDate fechaAConsultar = conversorFecha(fecha_venta);
         
         for(Venta venta : listaVentas){
             System.out.println("entra al for");
