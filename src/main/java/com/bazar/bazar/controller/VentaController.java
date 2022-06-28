@@ -87,13 +87,11 @@ public class VentaController {
     public List<Venta> traerVentasXFecha(@PathVariable String fecha_venta){
         List<Venta> listaVentasXFecha = new ArrayList();
         List<Venta> listaVentas = ventaServ.buscarVentas();
-        System.out.println(fecha_venta);
+        
         LocalDate fechaAConsultar = conversorFecha(fecha_venta);
         
         for(Venta venta : listaVentas){
-            System.out.println("entra al for");
             if(venta.getFecha_venta().equals(fechaAConsultar)){
-                System.out.println("entra al if");
                 listaVentasXFecha.add(venta);
             }
         }
