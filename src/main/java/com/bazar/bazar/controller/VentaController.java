@@ -86,7 +86,6 @@ public class VentaController {
     
     @GetMapping("/ventasFecha/{fecha_venta}")
     public VentasXFechaDTO traerVentasXFecha(@PathVariable String fecha_venta){
-        List<Venta> listaVentasXFecha = new ArrayList();
         List<Venta> listaVentas = ventaServ.buscarVentas();
         VentasXFechaDTO ventasXFecha = new VentasXFechaDTO();
         Double montoTotal = 0.0;
@@ -94,6 +93,8 @@ public class VentaController {
         
         LocalDate fechaAConsultar = conversorFecha(fecha_venta);
         
+        //recorro la lista de ventas buscando aquellas correspondientes a la fecha consultada
+        //hago la sumatoria de los montos y sumo uno al contador de ventas de esa fecha
         for(Venta venta : listaVentas){
             if(venta.getFecha_venta().equals(fechaAConsultar)){
                 montoTotal += venta.getTotal();
