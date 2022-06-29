@@ -2,6 +2,7 @@
 
 package com.bazar.bazar.controller;
 
+import com.bazar.bazar.dto.VentasXFechaDTO;
 import com.bazar.bazar.model.Cliente;
 import com.bazar.bazar.model.Producto;
 import com.bazar.bazar.model.Venta;
@@ -84,19 +85,26 @@ public class VentaController {
             
     
     @GetMapping("/ventasFecha/{fecha_venta}")
-    public List<Venta> traerVentasXFecha(@PathVariable String fecha_venta){
+    public VentasXFechaDTO traerVentasXFecha(@PathVariable String fecha_venta){
         List<Venta> listaVentasXFecha = new ArrayList();
         List<Venta> listaVentas = ventaServ.buscarVentas();
+        VentasXFechaDTO ventasXFecha = new VentasXFechaDTO();
+        Double montoTotal = 0.0;
+        int cantidadVentas = 0;
         
         LocalDate fechaAConsultar = conversorFecha(fecha_venta);
         
         for(Venta venta : listaVentas){
             if(venta.getFecha_venta().equals(fechaAConsultar)){
-                listaVentasXFecha.add(venta);
+                montoTotal += venta.getTotal();
+                cantidadVentas ++;
+                
             }
         }
                 
-        return listaVentasXFecha;
+        ventasXFecha.setCantidadVentas(cantidadVentas);
+        ventasXFecha.setMontoTotal(montoTotal);
+        return ventasXFecha;
     }
             
     private LocalDate conversorFecha(String fechaAConvertir){
