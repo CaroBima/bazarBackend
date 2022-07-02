@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 public class MayorVentaDto {
     private double codigo_venta;
-    private double total;
+    private int totalProductos;
     private String nombreCliente;
     private String apellidoCliente;
     private Double montoTotal;
@@ -18,9 +18,9 @@ public class MayorVentaDto {
     public MayorVentaDto() {
     }
 
-    public MayorVentaDto(double codigo_venta, double total, String nombreCliente, String apellidoCliente, Double montoTotal) {
+    public MayorVentaDto(double codigo_venta, int totalProductos, String nombreCliente, String apellidoCliente, Double montoTotal) {
         this.codigo_venta = codigo_venta;
-        this.total = total;
+        this.totalProductos = totalProductos;
         this.nombreCliente = nombreCliente;
         this.apellidoCliente = apellidoCliente;
         this.montoTotal = montoTotal;

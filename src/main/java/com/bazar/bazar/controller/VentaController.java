@@ -2,6 +2,7 @@
 
 package com.bazar.bazar.controller;
 
+import com.bazar.bazar.dto.MayorVentaDto;
 import com.bazar.bazar.dto.VentasXFechaDTO;
 import com.bazar.bazar.model.Cliente;
 import com.bazar.bazar.model.Producto;
@@ -108,6 +109,56 @@ public class VentaController {
         return ventasXFecha;
     }
             
+    
+    /*Obtener el codigo_venta, el total, la cantidad de productos, el nombre del 
+    cliente y el apellido del cliente de la venta con el monto más alto de todas.
+    a. Métodos HTTP: GET
+    b. Endpoint: localhost:8080/ventas/mayor_venta
+    */
+    @GetMapping("ventas/mayor_venta")
+    public List<MayorVentaDto> mayorVenta(){
+        Venta mayorVenta = new Venta(); 
+        double mayorTotal = 0;
+        List<MayorVentaDto> listaMayorVenta = new ArrayList();
+        MayorVentaDto mayorV = new MayorVentaDto();
+        
+        List<Venta> listaVentas = ventaServ.buscarVentas();
+        for (Venta venta : listaVentas){
+            if(venta.getTotal() > mayorTotal){
+                //Ifs para verificar si hay dos o mas ventas con el mismo importe mayor
+                if(venta.getTotal() != mayorTotal){
+                    mayorV.setCodigo_venta(venta.getCodigo_venta());
+                    mayorV.setNombreCliente(venta.getUnCliente().getNombre());
+                    mayorV.setApellidoCliente(venta.getUnCliente().getApellido());
+                    mayorV.setMontoTotal(venta.getTotal());
+                    mayorV.setTotalProductos(venta.getListaProductos().size());    
+                    mayorTotal = venta.getTotal();
+                    listaMayorVenta.clear();
+                    listaMayorVenta.add(mayorV);
+                }
+                if(venta.getTotal() == mayorTotal){
+                    mayorV.setCodigo_venta(venta.getCodigo_venta());
+                    mayorV.setNombreCliente(venta.getUnCliente().getNombre());
+                    mayorV.setApellidoCliente(venta.getUnCliente().getApellido());
+                    mayorV.setMontoTotal(venta.getTotal());
+                    mayorV.setTotalProductos(venta.getListaProductos().size());
+                    mayorTotal = venta.getTotal();
+                    listaMayorVenta.add(mayorV);
+                }
+               
+            }
+        }
+        
+        if(listaMayorVenta.size()== 0){
+             System.out.println(listaMayorVenta.size());
+            listaMayorVenta.add(mayorV);
+        }
+            
+        return listaMayorVenta;
+    }
+    
+    
+    //Formateador de fechas
     private LocalDate conversorFecha(String fechaAConvertir){
      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
      Date fechaConvertida=null;
