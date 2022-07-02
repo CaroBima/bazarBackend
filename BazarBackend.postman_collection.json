@@ -355,13 +355,13 @@
 			"response": []
 		},
 		{
-			"name": "Ventas - Crear venta 2 - Endpoint localhost:8080/ventas/crear",
+			"name": "Ventas - Crear venta 3 - Endpoint localhost:8080/ventas/crear",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"fecha_venta\":\"2022-05-15\",\r\n    \"total\": \"1350.25\",\r\n    \"listaProductos\":[\r\n        {\r\n            \"codigo_producto\": \"1\",\r\n            \"nombre\": \"Vasos\",\r\n            \"marca\": \"Durex\",\r\n            \"costo\": \"200\",\r\n            \"cantidad_disponible\": \"240\"\r\n\r\n        },\r\n         {\r\n            \"codigo_producto\": \"2\",\r\n            \"nombre\": \"Platos\",\r\n            \"marca\": \"Durex\",\r\n            \"costo\": \"250\",\r\n            \"cantidad_disponible\": \"140\"\r\n\r\n        }\r\n        ],\r\n    \"unCliente\": {\r\n        \"id_cliente\": \"4\",\r\n        \"nombre\":\"Eugenia\",\r\n        \"apellido\": \"Gomez\",\r\n        \"dni\": \"12345678\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"fecha_venta\":\"2022-05-15\",\r\n    \"total\": \"1850.25\",\r\n    \"listaProductos\":[\r\n        {\r\n            \"codigo_producto\": \"1\",\r\n            \"nombre\": \"Vasos\",\r\n            \"marca\": \"Durex\",\r\n            \"costo\": \"200\",\r\n            \"cantidad_disponible\": \"240\"\r\n\r\n        },\r\n         {\r\n            \"codigo_producto\": \"2\",\r\n            \"nombre\": \"Platos\",\r\n            \"marca\": \"Durex\",\r\n            \"costo\": \"250\",\r\n            \"cantidad_disponible\": \"140\"\r\n\r\n        }\r\n        ],\r\n    \"unCliente\": {\r\n        \"id_cliente\": \"4\",\r\n        \"nombre\":\"Eugenia\",\r\n        \"apellido\": \"Gomez\",\r\n        \"dni\": \"12345678\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -545,6 +545,25 @@
 				"method": "GET",
 				"header": [],
 				"url": {
+					"raw": "localhost:8080/ventasFecha/2022-06-23",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventasFecha",
+						"2022-06-23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas - Consultar Ventas por fecha 2 - Endpoint localhost:8080/ventasFecha/2022-05-15",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
 					"raw": "localhost:8080/ventasFecha/2022-05-15",
 					"host": [
 						"localhost"
@@ -553,6 +572,44 @@
 					"path": [
 						"ventasFecha",
 						"2022-05-15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas - Consultar Ventas por fecha 3 - Endpoint localhost:8080/ventasFecha/2022-06-22",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ventasFecha/2022-06-22",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventasFecha",
+						"2022-06-22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas - Consultar mayor venta - Endpoint localhost:8080/ventas/mayor_venta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ventas/mayor_venta",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ventas",
+						"mayor_venta"
 					]
 				}
 			},
